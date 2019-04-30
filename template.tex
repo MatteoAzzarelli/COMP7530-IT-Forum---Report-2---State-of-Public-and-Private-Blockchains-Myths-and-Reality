@@ -15,6 +15,7 @@
 \graphicspath{ {./img/} }
 \usepackage{setspace}       % set the space between lines
 \doublespacing
+\usepackage{subcaption}
 
 \title{State of Public and Private Blockchains:\\Myths and Reality}
 
@@ -46,7 +47,7 @@
     
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\linewidth]{History_of_Blockchain_Technology.png}
+        \includegraphics[width=\linewidth]{History_of_Blockchain_Technology.png}
         \caption{Show the main steps of blockchain technology. \cite{HistoryBCT}}
         \label{fig:historyOfBlockchain}
     \end{figure}
@@ -65,11 +66,12 @@
         \item[\textbf{Chain}] Each block is strongly connected to the previous one, the last block of the chain include the hash of the previous one. In this way if a block were modified it will broke the chain.
     \end{itemize}
     
+    \newpage
     Main different kind of blockchain \cite{wiki-Blockchain, BlockchainPP}:
     \begin{itemize}
-        \item \textbf{Public or Permissionless}: The network access is open to anyone and everyone, so it is completely free for everyone that would like to join. The control is distributed and involve every node. Everyone can join and everyone should validate the transaction.
+        \item \textbf{Public and Permissionless}: The network access is open to anyone and everyone, so it is completely free for everyone that would like to join. The control is distributed and involve every node. Everyone can join and everyone should validate the transaction.
         
-        \item \textbf{Private or Permissioned}: The network access and the activity of control and validation are limited to a restricted group of members which follow some guide line (Governance of Blockchain). This kind of blockchain fits applications of companies or organisations that have to guarantee the authentication of participants and of nodes of the blockchain.
+        \item \textbf{Private and Permissioned}: The network access and the activity of control and validation are limited to a restricted group of members which follow some guide line (Governance of Blockchain). This kind of blockchain fits applications of companies or organisations that have to guarantee the authentication of participants and of nodes of the blockchain.
         
         
         \item \textbf{Consortium}: It is like the Private, but instead of a single organisation that manage the blockchain, there are more that perform this activity.
@@ -83,21 +85,70 @@
         \label{fig:pppp}
     \end{figure}
     
-\section{Blockchain as a Services}
+\section{Myth vs reality}
+    In this section we are going to discuss some of the common myth regarding blockchain.
+    
+    First of all, \textbf{Public blockchains are completely decentralized}, this is not really true. For instance, if we consider Bitcoin, this is a public permissionless blockchain, so miners are the entity able to validate transactions.
+    
+     might seem that if a blockchain is stored on each network node, then special services or authorities cannot stop Bitcoin on a whim, since there is no centralised server or anything like it and there is nobody to turn to if you wanted to close everything.
+
+    In reality, all the "independent" minerals are pooled, in other word they are grouped together under a server in order to combine their computing power. They are based on the assumption that it is better to have a small but stable income than a huge gain perhaps every thousand years and even this is not guaranteed if you are on your own.
+
+    The fig.\ref{fig:bitcoin-mining-pools} shows about 20 of the largest mining pools, but the first 4 control more than 50\% of all the computing power.
+    Gaining access to these four control computers alone would give you the chance to double your Bitcoins.
+    This, as one can imagine, would devalue Bitcoins somewhat, and doing so is actually quite possible, moreover because most of the pools, as shows in fig.\ref{fig:mining-by-countries}, together with their computing powers, are located within a country, which makes it much easier capture them and gain control over Bitcoins.
     
     
-\section{File Sharing}
+    \begin{figure}[h]
+        \begin{minipage}[c]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{bitcoin-mining-pools-1024x701.jpg}
+            \caption{An estimate of the distribution of computing power among the largest mining pools. \cite{miningpools}}
+            \label{fig:bitcoin-mining-pools}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[c]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{mining-by-countries-1024x386.jpg}
+            \caption{Distribution of mining by country. \cite{miningpools}}
+            \label{fig:mining-by-countries}
+        \end{minipage}
+    \end{figure}
     
+\section{Blockchain as a Services - BaaS}
+    Now we are going to focus a little more on the Private and Permissioned blockchain.
    
+    Blockchain as a Services is a service provided from third parts that offer to their customer the possibility to use cloud base solution in order to build, host and use their own blockchain applications.
     
+    The main advantages of these platforms are that they will provide a user friendly environment where the users can build their application without think about how to manages all the necessary tasks and activities to keep the infrastructure agile and operational, and without cover the initial costs of an adequate infrastructure able to supply their requirements.
     
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\linewidth]{Slide1.jpeg}
+        \caption{Architecture fitting with Enterprise Services and Processes. fig:Architecture (picture from slide of Dr. C. Mohan)}
+        \label{fig:fig:Architecture}
+    \end{figure}
     
-\section{Governance OF the Internet vs Governance ON the Internet}
+\section{Blockchain Possible Applications}
+    Blockchain is not only for financial application, in fact, there are many others sectors that could use this technology, and in particular they could use the BaaS to develop their application.
     
-    
-\section{Privacy vs Security}
-   
-    
+    Now we introduce three of the many possible applications.
+    \subsection{Cybersecurity}
+        Even if a blockchain register is public, the data communications implemented within it are verified and sent using advanced encryption techniques\cite{cybercecurity}.
+        This ensures that the data arrives correctly from the sources to the recipients and that nothing is intercepted in the meantime.
+        
+        If the blockchain technology were adopted on a larger scale, the likelihood of hacking or attempts to tamper with and intrude on corporate databases could be reduced, due to the fact that the distributed registers are currently considered more robust than many legacy systems. 
+        
+    \subsection{Academic World}
+        The Holbertson School of Software Engineering, based in San Francisco, California, has announced its intention to use blockchain technology to authenticate academic titles and certificates\cite{Holberton}.
+        This will ensure that students who claim to have passed the courses of their study program are not able to claim credits that they have not legitimately earned.
+        
+        Other universities,as it is possible see on this \cite{unic}, have also begun implementing tools based on distributed register technology to ensure greater transparency in the management of academic certificates and in the transcription of degrees and diplomas.
+        
+        This is why frauds affecting this type of application could be more easily fought, not to mention the savings in terms of time and costs linked to the possibility of avoiding manual checks of thousands of paper documents every year.
+        
+    \subsection{"Political" elections}
+        The elections require the authentication of the identity of the voters, the safe keeping of the registers and an absolutely transparent counting and counting activity to determine the winner. Blockchains can serve as a useful tool for the selection, monitoring and counting of votes in a mirrored manner, clearing the field of any probable attempt at electoral fraud or loss of data and votes. By integrating the selection of votes expressed as operations within the blockchains, voters can be reassured about the correctness and transparency of the final counting of the voting operations, because they are able to directly count the votes themselves and, thanks to the traceability guaranteed by the distributed blockchain databases, they can also be reassured about the fact that the votes have not been modified and that no legitimately expressed votes have been added or, on the contrary, canceled. Follow My Vote has already been used in testing during the last US presidential election as a verifiable end-to-end online voting system. \cite{followmyvote}
+        
+        Obviously this method could be extended and it is valid for every kind of election.
 
 \bibliographystyle{IEEEtran}  
 \bibliography{references}
